@@ -9,7 +9,44 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log(window.location);
+    let user = window.location.pathname.toString().substring(1);
+    this.fetchTweets(user);
+  }
+
+  fetchTweets(user) {
+    let endpoint = "https://www.graphqlhub.com/graphql?query=";
+    let urlParams =`
+    {
+      graphQLHub
+      twitter {
+        user(identifier: name, identity: ${user}) {
+          created_at
+          description
+          id
+          screen_name
+          name
+          profile_image_url
+          url
+          tweets_count
+          followers_count
+
+          tweets(limit: 50) {
+            text
+          	retweet_count
+            created_at
+          }
+        }
+        search(q: "Javascript", count: 1, result_type: mixed) {
+          user {
+            screen_name
+          }
+          id
+          text
+        }
+      }
+    }`;
+
+  console.log(urlParams);
   }
 
   render() {
