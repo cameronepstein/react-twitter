@@ -6,7 +6,7 @@ Displays a users recent tweets alongside user data.
 
 - Run `npm start`
 - Open [http://localhost:3000](http://localhost:3000) in a web browser
-- Add a valid twitter username into the url's GET parameters to view page data. (e.g. `http://localhost:3000`)
+- Add a valid twitter username into the url's GET parameters to view page data. (e.g. `http://localhost:3000/louistheroux`)
 
 ## Available Scripts
 
