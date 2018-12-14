@@ -30,7 +30,6 @@ class App extends Component {
   }
 
   render() {
-    const data = [{"name": "sam"}, {"name": "cam"}]
     return (
       <div className="App">
       { this.state.user ?
