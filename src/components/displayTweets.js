@@ -29,27 +29,5 @@ let styles = {
   },
   li: {
     padding: 10
-  },
-  container: {
-    display: 'flex',
-    height: 300,
-    widht: '40vw',
-    backgroundColor: '#fff',
-    justifyContent: 'center',
-    flexDirection: 'column',
-    alignSelf: 'center',
-    alignItems: 'center'
-  },
-  textContainer: {
-    display: 'flex',
-    flex: 0.4,
-    fontFamily: 'Source Sans Pro',
-    fontWeight: 'normal'
-  },
-  separator: {
-    border: 'solid',
-    borderWidth: 1,
-    width: 40,
-    borderColor: '#1FAA74'
   }
 }

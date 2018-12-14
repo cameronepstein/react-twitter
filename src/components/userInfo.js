@@ -4,7 +4,7 @@ export default class UserInfo extends PureComponent {
 
    render () {
      return (
-       <div>
+       <div style={styles.container}>
         <h1>{this.props.user.name}</h1>
         <h1>@{this.props.user.screen_name}</h1>
         <h1>Followers: {this.props.user.followers_count}</h1>
@@ -24,17 +24,5 @@ let styles = {
     flexDirection: 'column',
     alignSelf: 'center',
     alignItems: 'center'
-  },
-  textContainer: {
-    display: 'flex',
-    flex: 0.4,
-    fontFamily: 'Source Sans Pro',
-    fontWeight: 'normal'
-  },
-  separator: {
-    border: 'solid',
-    borderWidth: 1,
-    width: 40,
-    borderColor: '#1FAA74'
   }
 }
