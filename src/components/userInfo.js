@@ -1,29 +1,14 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-export default class UserInfo extends Component {
-
-  constructor (props) {
-     super(props)
-     this.state = {
-       name: ''
-     }
-   }
-
-   componentDidMount () {
-
-   }
-
-   componentWillReceiveProps = (nextProps) => {
-     if (nextProps.user) {
-       this.setState({name: nextProps.user.name})
-     }
-     console.log(nextProps);
-   }
+export default class UserInfo extends PureComponent {
 
    render () {
      return (
        <div>
-        <h1>{this.state.name}</h1>
+        <h1>{this.props.user.name}</h1>
+        <h1>@{this.props.user.screen_name}</h1>
+        <h1>Followers: {this.props.user.followers_count}</h1>
+        <h1>Tweets: {this.props.user.tweets_count}</h1>
        </div>
      )
    }

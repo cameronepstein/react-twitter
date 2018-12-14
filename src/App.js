@@ -6,9 +6,7 @@ import UserInfo from './components/userInfo.js';
 class App extends Component {
   constructor (props) {
     super(props);
-    this.state = {
-      user: {}
-    };
+    this.state = {};
   }
 
   componentDidMount () {
@@ -33,9 +31,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+      { this.state.user ?
           <UserInfo
             user={this.state.user}
           />
+          :
+          <div></div>
+      }
       </div>
     );
   }
