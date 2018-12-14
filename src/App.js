@@ -20,6 +20,7 @@ class App extends Component {
        .then((response) => response.json())
        .then((responseJson) => {
         console.log(responseJson);
+        this.setState({ user: responseJson.data.twitter.user })
        })
        .catch((error) => {
          console.error(error);
