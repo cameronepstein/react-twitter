@@ -7,7 +7,13 @@ export default class DisplayTweets extends PureComponent {
        <div>
          <ul style={styles.ul}>
          {this.props.tweets.map(function(d, idx) {
-             return (<li key={idx} style={styles.li}>{d.text}</li>)
+             return (
+               <div key={idx} style={styles.li}>
+                 <p>{d.text}</p>
+                 <p>created at: {d.created_at}</p>
+                 <p>retweets: {d.retweet_count}</p>
+               </div>
+             )
          })}
          </ul>
        </div>
