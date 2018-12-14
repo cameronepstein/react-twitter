@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import UserInfo from './components/userInfo.js';
+import DisplayTweets from './components/displayTweets.js';
 
 class App extends Component {
   constructor (props) {
@@ -29,12 +30,18 @@ class App extends Component {
   }
 
   render() {
+    const data = [{"name": "sam"}, {"name": "cam"}]
     return (
       <div className="App">
       { this.state.user ?
+        <div>
           <UserInfo
             user={this.state.user}
           />
+          <DisplayTweets
+            tweets={this.state.user.tweets}
+          />
+        </div>
           :
           <div></div>
       }
