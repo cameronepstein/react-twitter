@@ -2,25 +2,6 @@ import React, { PureComponent } from 'react';
 
 export default class DisplayTweets extends PureComponent {
 
-  componentDidMount () {
-    let tweet = this.props.tweets[1]
-    console.log("tweet", tweet);
-    let string = ''
-    tweet.text.split(" ").map(function(word, idx) {
-      console.log("word", word);
-      word.charAt(0) == '@' ?
-        string = <button onClick={() => {this.onPress()}}>word</button>
-      :
-        string += word;
-
-    })
-    console.log("string", string);
-  }
-
-  onPress = () => {
-    console.log("has been clicked");
-  }
-
    render () {
      return (
        <div>
