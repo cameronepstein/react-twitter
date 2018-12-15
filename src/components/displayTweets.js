@@ -7,9 +7,21 @@ export default class DisplayTweets extends PureComponent {
        <div>
          <ul style={styles.ul}>
          {this.props.tweets.map(function(d, idx) {
+           var links = [];
+           var str = "";
+           d.text.split(" ").map(function(word, idx) {
+             if (word.charAt(0) == '@') {
+               console.log("word", word);
+               links.push(<a href={'https://twitter.com/' + word.substring(1)}>View Mentioned Profile: {word}</a>);
+             }
+             str += word + " ";
+           })
              return (
                <div key={idx} style={styles.li}>
-                 <p>{d.text}</p>
+                 <p>{str}</p>
+                 {links.map(function(link, idx) {
+                   return <p>{link}</p>
+                 })}
                  <p>created at: {d.created_at}</p>
                  <p>retweets: {d.retweet_count}</p>
                </div>
