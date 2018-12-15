@@ -30,9 +30,9 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 ```
 As a user,
 So that I can view a twitter pages following count
-I would like a users following count to be displayed 
+I would like a users following count to be displayed
 ---
 As a user,
 So that I can view a twitter pages retweet count
-I would like a graph displaying treweet counts over time
+I would like a graph displaying retweet counts over time
 ```

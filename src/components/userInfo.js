@@ -18,7 +18,6 @@ let styles = {
   container: {
     display: 'flex',
     height: 300,
-    widht: '40vw',
     backgroundColor: '#fff',
     justifyContent: 'center',
     flexDirection: 'column',
