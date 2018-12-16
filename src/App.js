@@ -30,6 +30,7 @@ class App extends Component {
   }
 
   render() {
+    console.log("USER TWEETS", this.state.user);
     return (
       <div className="App">
       { this.state.user ?

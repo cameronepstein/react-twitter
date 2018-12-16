@@ -1,33 +1,33 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import Tweet from './tweet.js';
 
-export default class DisplayTweets extends PureComponent {
+
+export default class DisplayTweets extends Component {
+
+  componentDidMount () {
+    console.log("props", this.props);
+  }
+
+  renderTweet() {
+    console.log("render tweet", this.props);
+    return (
+      <ul style={styles.ul}>
+        {this.props.tweets.map((tw, i) => {
+          console.log("TW", tw);
+            return (
+              <div>
+              <Tweet key={i} tweet={tw}/>
+              </div>
+            )
+        })}
+      </ul>
+    )
+  }
 
    render () {
      return (
        <div>
-         <ul style={styles.ul}>
-         {this.props.tweets.map(function(d, idx) {
-           var links = [];
-           var str = "";
-           d.text.split(" ").map(function(word, idx) {
-             if (word.charAt(0) == '@') {
-               console.log("word", word);
-               links.push(<a href={'https://twitter.com/' + word.substring(1)}>View Mentioned Profile: {word}</a>);
-             }
-             str += word + " ";
-           })
-             return (
-               <div key={idx} style={styles.li}>
-                 <p>{str}</p>
-                 {links.map(function(link, idx) {
-                   return <p>{link}</p>
-                 })}
-                 <p>created at: {d.created_at}</p>
-                 <p>retweets: {d.retweet_count}</p>
-               </div>
-             )
-         })}
-         </ul>
+         {this.renderTweet()}
        </div>
      )
    }
@@ -35,9 +35,15 @@ export default class DisplayTweets extends PureComponent {
 };
 
 let styles = {
+  pa: {
+    border: '3px solid red',
+    borderRightColor: 'red',
+  },
   ul: {
     border: '3px solid grey',
-    borderRightColor: 'grey'
+    borderRightColor: 'grey',
+    display: 'flex',
+    flexDirection: 'column'
   },
   li: {
     padding: 10
