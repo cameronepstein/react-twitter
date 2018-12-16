@@ -3,16 +3,33 @@ import React, { Component } from 'react';
 export default class Tweet extends Component {
 
   componentDidMount () {
-    console.log("IN TWEET", this.props);
+    let stringArray = this.props.tweet.text.split(/:| /)
+    // this.renderTweetArray(stringArray)
 
+  }
+
+  renderTweetArray(stringArray) {
+    console.log("stringArray", stringArray);
+    return (
+      <div style={styles.row}>
+      {stringArray.map((word, i) => {
+        console.log("word", word);
+          return (
+            <div>
+              <pre> {word}</pre>
+            </div>
+          )
+      })}
+      </div>
+    )
+    console.log("stringArray", stringArray);
   }
 
 
    render () {
-     console.log("TWEET PROPS", this.props.tweet);
      return (
        <div>
-        <p style={styles.pa}>{this.props.tweet.text}</p>
+        {this.renderTweetArray(this.props.tweet.text.split(/:| /))}
        </div>
      )
    }
@@ -24,13 +41,9 @@ let styles = {
     border: '3px solid red',
     borderRightColor: 'red',
   },
-  ul: {
-    border: '3px solid grey',
-    borderRightColor: 'grey',
+  row: {
     display: 'flex',
-    flexDirection: 'column'
-  },
-  li: {
-    padding: 10
+    flexDirection: 'row'
   }
+
 }

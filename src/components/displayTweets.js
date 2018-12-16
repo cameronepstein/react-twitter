@@ -5,11 +5,9 @@ import Tweet from './tweet.js';
 export default class DisplayTweets extends Component {
 
   componentDidMount () {
-    console.log("props", this.props);
   }
 
   renderTweet() {
-    console.log("render tweet", this.props);
     return (
       <ul style={styles.ul}>
         {this.props.tweets.map((tw, i) => {
