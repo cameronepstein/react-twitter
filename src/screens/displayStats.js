@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import UserInfo from '../components/userInfo.js';
-import DisplayTweets from '../components/displayTweets.js';
 import ReactChartkick, { LineChart } from 'react-chartkick';
 import Chart from 'chart.js';
+ReactChartkick.addAdapter(Chart)
 
 export default class DisplayStats extends Component {
   constructor (props) {
@@ -15,10 +14,8 @@ export default class DisplayStats extends Component {
   }
 
   sortChartData(tweets) {
-    console.log("tweets", tweets);
     let chartData = tweets.map(tweet => [tweet.created_at, tweet.retweet_count] )
     this.setState({data: chartData})
-    console.log("chartData", chartData);
   }
 
   render() {

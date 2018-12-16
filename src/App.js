@@ -4,7 +4,7 @@ import './App.css';
 import DisplayUser from './screens/displayUser.js';
 import DisplayStats from './screens/displayStats.js';
 
-class App extends Component {
+export default class App extends Component {
   constructor (props) {
     super(props);
     this.state = {
@@ -44,5 +44,3 @@ class App extends Component {
     );
   }
 }
-
-export default App;

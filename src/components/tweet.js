@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 
 export default class Tweet extends Component {
 
-  componentDidMount () {
-    let stringArray = this.props.tweet.text.split(/:| /)
-    // this.renderTweetArray(stringArray)
-
-  }
-
   renderTweetArray(stringArray) {
     return (
       <div style={styles.row}>
@@ -15,7 +9,7 @@ export default class Tweet extends Component {
         if (word.charAt(0) === '@') {
           return (
             <div key={i} >
-              <a href={"https://www.twitter.com/"+word}> {word}</a>
+              <a style={styles.tweetFont} href={"https://www.twitter.com/"+word}> {word}</a>
             </div>
         )
         } else {
@@ -42,6 +36,9 @@ export default class Tweet extends Component {
 };
 
 let styles = {
+  tweetFont: {
+    fontFamily: 'Monospace',
+  },
   pa: {
     border: '3px solid red',
     borderRightColor: 'red',

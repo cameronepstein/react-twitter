@@ -8,8 +8,6 @@ export default class DisplayUser extends Component {
     this.state = {};
   }
 
-  componentDidMount () {
-  }
 
   render() {
     return (

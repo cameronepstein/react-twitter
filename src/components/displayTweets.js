@@ -4,9 +4,6 @@ import Tweet from './tweet.js';
 
 export default class DisplayTweets extends Component {
 
-  componentDidMount () {
-  }
-
   renderTweet() {
     return (
       <ul style={styles.ul}>
