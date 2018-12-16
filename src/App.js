@@ -12,6 +12,7 @@ class App extends Component {
 
   componentDidMount () {
     let user = window.location.pathname.toString().substring(1);
+    console.log("window", window );
     this.fetchTweets(user);
   }
 

@@ -9,20 +9,18 @@ export default class Tweet extends Component {
   }
 
   renderTweetArray(stringArray) {
-    console.log("stringArray", stringArray);
     return (
       <div style={styles.row}>
       {stringArray.map((word, i) => {
         if (word.charAt(0) === '@') {
-          console.log("word", word);
           return (
-            <div>
+            <div key={i} >
               <a href={"https://www.twitter.com/"+word}> {word}</a>
             </div>
         )
         } else {
           return (
-            <div>
+            <div key={i}>
               <pre> {word}</pre>
             </div>
           )
@@ -30,7 +28,6 @@ export default class Tweet extends Component {
       })}
       </div>
     )
-    console.log("stringArray", stringArray);
   }
 
 

@@ -11,10 +11,11 @@ export default class DisplayTweets extends Component {
     return (
       <ul style={styles.ul}>
         {this.props.tweets.map((tw, i) => {
-          console.log("TW", tw);
             return (
-              <div>
-              <Tweet key={i} tweet={tw}/>
+              <div key={i}>
+                <Tweet key={i} tweet={tw}/>
+                <pre>Created at: {tw.created_at}</pre>
+                <pre>Retweets: {tw.retweet_count}</pre>
               </div>
             )
         })}
