@@ -12,7 +12,6 @@ class App extends Component {
   }
 
   componentDidMount () {
-    console.log("window", window.location);
     let user = window.location.pathname.toString().substring(1).split("/");
     this.fetchTwitterUser(user[0]);
   }
@@ -31,7 +30,6 @@ class App extends Component {
   }
 
   render() {
-    console.log("state user", this.state.user);
     return (
       <div>
         { this.state.user ?

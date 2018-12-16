@@ -8,27 +8,18 @@ export default class DisplayUser extends Component {
     this.state = {};
   }
 
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.user) {
-      this.setState({user: nextProps.user})
-    }
+  componentDidMount () {
   }
 
   render() {
     return (
       <div>
-      { this.state.user ?
-        <div>
-          <UserInfo
-            user={this.props.user}
-          />
-          <DisplayTweets
-            tweets={this.props.user.tweets}
-          />
-        </div>
-          :
-          <div></div>
-      }
+        <UserInfo
+          user={this.props.user}
+        />
+        <DisplayTweets
+          tweets={this.props.user.tweets}
+        />
       </div>
     );
   }
