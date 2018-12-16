@@ -13,12 +13,20 @@ export default class Tweet extends Component {
     return (
       <div style={styles.row}>
       {stringArray.map((word, i) => {
-        console.log("word", word);
+        if (word.charAt(0) === '@') {
+          console.log("word", word);
+          return (
+            <div>
+              <a href={"https://www.twitter.com/"+word}> {word}</a>
+            </div>
+        )
+        } else {
           return (
             <div>
               <pre> {word}</pre>
             </div>
           )
+        }
       })}
       </div>
     )
