@@ -2,6 +2,8 @@
 
 Displays a users recent tweets alongside user data.
 
+NOTE: Plan to remove `user_mentions` branch in place of `staging`
+
 ## Running project
 
 - Run `npm start`
